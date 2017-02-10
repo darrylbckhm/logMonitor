@@ -1,0 +1,182 @@
+/tmp/vmware-darrylb/vmware-vmis-9743.log
+/tmp/vmware-darrylb/vmware-vmis-9709.log
+/tmp/vmware-darrylb/vmware-vmis-9675.log
+/tmp/vmware-darrylb/vmware-vmis-9641.log
+/tmp/vmware-darrylb/vmware-vmis-9607.log
+/tmp/vmware-darrylb/vmware-vmis-9573.log
+/tmp/vmware-darrylb/vmware-vmis-9539.log
+/tmp/vmware-darrylb/vmware-vmis-9505.log
+/tmp/vmware-darrylb/vmware-vmis-9471.log
+/tmp/vmware-darrylb/vmware-vmis-9437.log
+/tmp/vmware-darrylb/vmware-vmis-9403.log
+/tmp/vmware-darrylb/vmware-vmis-9369.log
+/tmp/vmware-darrylb/vmware-vmis-9335.log
+/tmp/vmware-darrylb/vmware-vmis-9301.log
+/tmp/vmware-darrylb/vmware-vmis-9267.log
+/tmp/vmware-darrylb/vmware-vmis-9233.log
+/tmp/vmware-darrylb/vmware-vmis-9199.log
+/tmp/vmware-darrylb/vmware-vmis-9165.log
+/tmp/vmware-darrylb/vmware-vmis-9131.log
+/tmp/vmware-darrylb/vmware-vmis-9097.log
+/tmp/vmware-darrylb/vmware-vmis-9063.log
+/tmp/vmware-darrylb/vmware-vmis-9029.log
+/tmp/vmware-darrylb/vmware-vmis-8995.log
+/tmp/vmware-darrylb/vmware-vmis-8961.log
+/tmp/vmware-darrylb/vmware-vmis-8927.log
+/tmp/vmware-darrylb/vmware-vmis-8893.log
+/tmp/vmware-darrylb/vmware-vmis-8859.log
+/tmp/vmware-darrylb/vmware-vmis-8824.log
+/tmp/vmware-darrylb/vmware-vmis-8790.log
+/tmp/vmware-darrylb/vmware-vmis-8756.log
+/tmp/vmware-darrylb/vmware-vmis-8722.log
+/tmp/vmware-darrylb/vmware-apploader-8577.log
+/tmp/vmware-darrylb/vmware-apploader-8552.log
+/tmp/vmware-darrylb/vmware-apploader-8474.log
+/tmp/vmware-darrylb/vmware-vmplayer-7620.log
+/tmp/vmware-darrylb/vmware-apploader-7620.log
+/tmp/vmware-darrylb/vmware-7626.log
+/tmp/vmware-darrylb/vmware-apploader-7626.log
+/tmp/vmware-darrylb/vmware-apploader-7447.log
+/tmp/vmware-darrylb/vmware-installer.log
+/tmp/vmware-darrylb/vmware-vmplayer-3945.log
+/tmp/vmware-darrylb/vmware-apploader-3945.log
+/tmp/vmware-darrylb/vmware-3951.log
+/tmp/vmware-darrylb/vmware-apploader-3951.log
+/tmp/vmware-darrylb/vmware-2927.log
+/tmp/vmware-darrylb/vmware-apploader-2927.log
+/tmp/vmware-darrylb/vmware-2430.log
+/tmp/vmware-darrylb/vmware-apploader-2430.log
+/tmp/vmware-root/vmware-authdlauncher-5454.log
+/tmp/vmware-root/vmware-vmis-5279.log
+/tmp/vmware-root/vmware-vmis-5237.log
+/tmp/vmware-root/vmware-vmis-4694.log
+/tmp/vmware-root/vmware-vmis-4652.log
+/tmp/vmware-root/vmware-4053.log
+/tmp/vmware-root/vmware-apploader-4053.log
+/tmp/vmware-root/vmware-authdlauncher-3258.log
+/tmp/vmware-root/vmware-3029.log
+/tmp/vmware-root/vmware-apploader-3029.log
+/tmp/vmware-root/vmware-authdlauncher-2829.log
+/tmp/vmware-root/vmware-2606.log
+/tmp/vmware-root/vmware-apploader-2606.log
+/tmp/vmware-root/vmware-authdlauncher-1126.log
+/tmp/vmware-root/vmware-apploader-1056.log
+/var/tmp/dnf-darrylb-51hggmum/dnf.librepo.log
+/var/tmp/dnf-darrylb-51hggmum/dnf.rpm.log
+/var/tmp/dnf-darrylb-51hggmum/hawkey.log
+/var/tmp/dnf-darrylb-51hggmum/dnf.log
+/var/lib/gdm/.local/share/xorg/Xorg.0.log
+/var/cache/akmods/VirtualBox/5.1.14-1-for-4.9.7-101.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.10-1-for-4.9.5-100.fc24.x86_64.failed.log
+/var/cache/akmods/VirtualBox/5.1.8-1-for-4.8.10-200.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.14-1-for-4.9.6-100.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.10-1-for-4.8.12-200.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.8-1-for-4.8.8-200.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/.last.log
+/var/cache/akmods/VirtualBox/5.1.10-1-for-4.8.15-200.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.14-1-for-4.9.5-100.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.10-1-for-4.8.11-200.fc24.x86_64.log
+/var/cache/akmods/VirtualBox/5.1.10-1-for-4.8.10-200.fc24.x86_64.log
+/var/cache/akmods/akmods.log
+/var/cache/PackageKit/24/hawkey/hawkey.log
+/var/cache/PackageKit/25/hawkey/hawkey.log
+/var/log/audit/audit.log
+/var/log/vmware/vmware-usbarb-1148.log
+/var/log/vmware/vmware-usbarb-5373.log
+/var/log/vmware/vmware-usbarb-1151.log
+/var/log/vmware/vmware-usbarb-1136.log
+/var/log/vmware/vmware-usbarb-3426.log
+/var/log/vmware/vmware-usbarb-7460.log
+/var/log/dnf.librepo.log
+/var/log/dnf.rpm.log
+/var/log/hawkey.log
+/var/log/dnf.log
+/var/log/anaconda/ifcfg.log
+/var/log/anaconda/ks-script-55klfkc6.log
+/var/log/anaconda/journal.log
+/var/log/anaconda/ks-script-sozmb7xa.log
+/var/log/anaconda/program.log
+/var/log/anaconda/ks-script-_lk5z7vz.log
+/var/log/anaconda/ks-script-1b3chzr6.log
+/var/log/anaconda/ks-script-hgj228ap.log
+/var/log/anaconda/storage.log
+/var/log/anaconda/ks-script-dwn0g5wz.log
+/var/log/anaconda/ks-script-53yqjrnm.log
+/var/log/anaconda/dnf.rpm.log
+/var/log/anaconda/dnf.log
+/var/log/anaconda/ks-script-aegp4bql.log
+/var/log/anaconda/anaconda.log
+/var/log/anaconda/packaging.log
+/var/log/anaconda/lvm.log
+/var/log/boot.log
+/home/darrylb/.local/share/xorg/Xorg.0.log
+/home/darrylb/.local/share/gvfs-metadata/home-1e66796f.log
+/home/darrylb/.local/share/gvfs-metadata/trash:-4b277f35.log
+/home/darrylb/.local/share/gvfs-metadata/uuid-D8CC9C12CC9BE8D0-f2344ee0.log
+/home/darrylb/.local/share/gvfs-metadata/uuid-48D03A42D03A3712-0561a8ed.log
+/home/darrylb/.local/share/gvfs-metadata/uuid-2016-02-18-23-00-18-00-1313b0f6.log
+/home/darrylb/.local/share/gvfs-metadata/uuid-52B6F1CC5B707C35-6beeb4f7.log
+/home/darrylb/.local/share/gvfs-metadata/root-b36729e2.log
+/home/darrylb/.local/share/gvfs-metadata/uuid-E45AAABC5AAA8B3E-5849e91e.log
+/home/darrylb/.vmware/playerUploadedData.log
+/home/darrylb/.vmware/player.log
+/home/darrylb/.mozilla/firefox/Crash Reports/submit.log
+/home/darrylb/.config/VirtualBox/VBoxSVC.log
+/home/darrylb/.config/VirtualBox/NatNetwork.log
+/home/darrylb/.config/VirtualBox/selectorwindow.log
+/home/darrylb/.config/google-chrome/Default/Extension State/000009.log
+/home/darrylb/.config/google-chrome/Default/Sync Extension Settings/pkedcjkdefgpdelpbcmbmeomcjbeemfm/000003.log
+/home/darrylb/.config/google-chrome/Default/Service Worker/Database/000003.log
+/home/darrylb/.config/google-chrome/Default/data_reduction_proxy_leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/Platform Notifications/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_play.spotify.com_0.indexeddb.leveldb/000004.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_fetlife.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/000123.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/http_tu9srvbirvvtmcrmdy5hzhnhzmvwcm90zwn0zwquy29t.g00.chicagotribune.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/http_tu9srvbirvvtmcrhzc5kb3vibgvjbgljay5uzxq0.g00.chicagotribune.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/http_tu9srvbirvvtmcrzzwn1cmuuywnllmfkdmvydglzaw5nlmnvbq00.g00.chicagotribune.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/IndexedDB/https_www.amazon.com_0.indexeddb.leveldb/000003.log
+/home/darrylb/.config/google-chrome/Default/Managed Extension Settings/cfhdojbkjhnklbpkdaibdccddilifddb/000003.log
+/home/darrylb/.config/google-chrome/Default/Session Storage/000553.log
+/home/darrylb/.config/google-chrome/Default/File System/Origins/000003.log
+/home/darrylb/.config/google-chrome/Default/File System/002/t/Paths/000003.log
+/home/darrylb/.config/google-chrome/Default/File System/001/t/Paths/000003.log
+/home/darrylb/.config/google-chrome/Default/File System/Plugins/Origins/000003.log
+/home/darrylb/.config/google-chrome/Default/File System/Plugins/000/application_x-ppapi-widevine-cdm/Paths/000003.log
+/home/darrylb/.config/google-chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/000003.log
+/home/darrylb/.config/google-chrome/Default/Local Extension Settings/cfhdojbkjhnklbpkdaibdccddilifddb/004451.log
+/home/darrylb/.config/google-chrome/Default/Extension Rules/000003.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1486049747_7845.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1485989203_21789.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1486052391_7845.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1486073526_7104.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1486069807_30155.log
+/home/darrylb/.config/Blue Jeans/bjnplugin/logs/bjnplugin.1486047904_3144.log
+/home/darrylb/.pulse_secure/pulse/pulsesvc.log
+/home/darrylb/.gradle/daemon/2.14.1/daemon-14839.out.log
+/home/darrylb/.gradle/daemon/2.14.1/daemon-8775.out.log
+/home/darrylb/.gradle/daemon/2.14.1/daemon-9837.out.log
+/home/darrylb/.gradle/daemon/2.14.1/daemon-8507.out.log
+/home/darrylb/.gradle/daemon/2.14.1/daemon-11284.out.log
+/home/darrylb/.AndroidStudio2.2/system/log/idea.log
+/home/darrylb/.minecraft/logs/latest.log
+/home/darrylb/.cache/shotwell/shotwell.log
+/home/guest/.config/google-chrome/Default/Extension State/000003.log
+/home/guest/.config/google-chrome/Default/Sync Extension Settings/pkedcjkdefgpdelpbcmbmeomcjbeemfm/000003.log
+/home/guest/.config/google-chrome/Default/data_reduction_proxy_leveldb/000003.log
+/home/guest/.config/google-chrome/Default/Session Storage/000003.log
+/home/guest/.config/google-chrome/Default/Local Extension Settings/ghbmnnjooekpmoecnnnilnnbdlolhkhi/000003.log
+/home/guest/.config/google-chrome/Default/Extension Rules/000003.log
+/usr/local/pulse/postinstall.log
+/usr/lib/rpm/rpm.log
+/run/user/1000/speech-dispatcher/log/dummy.log
+/run/user/1000/speech-dispatcher/log/cicero.log
+/run/user/1000/speech-dispatcher/log/generic.log
+/run/user/1000/speech-dispatcher/log/espeak.log
+/run/user/1000/speech-dispatcher/log/speech-dispatcher.log
+/root/vmware/Ubuntu 64-bit2/vmware.log
+/root/.AndroidStudio2.2/system/log/idea.log
+/root/.gradle/daemon/2.14.1/daemon-15133.out.log
+/root/.pulse_secure/pulse/pulsesvc.log
