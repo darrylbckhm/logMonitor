@@ -6,6 +6,7 @@ import subprocess
 import os
 import threading
 import socket
+import time
 from flask import Flask, render_template
 
 log_db_path = "/home/darrylb/darrylbckhm/logMonitor/logs.db"
@@ -30,16 +31,19 @@ def create_table():
     conn = connect_db()
     c = conn.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS logs(file TEXT, error TEXT)')
+    c.close()
+    conn.close()
 
-def insert_db(log_map):
+def insert_db(path, contents):
     conn = connect_db()
     c = conn.cursor()
-    c.execute('CREATE TABLE IF NOT EXISTS logs(file TEXT, error TEXT)')
-    #considering the trade offs between storing errors as single entries in db, as an array, and/or incrementing a variable to keep track of dups
-    for key in log_map:
-        for value in log_map[key]:
-            c.execute("INSERT INTO logs VALUES (?, ?)", (key, value))
-        print("Inserted: ", key)
+    c.execute('CREATE TABLE IF NOT EXISTS files(file TEXT)')
+    c.execute('CREATE TABLE IF NOT EXISTS entries(entry TEXT)')
+    c.execute('INSERT INTO files VALUES(?)', [path])
+#    print("Working on: ", path)
+    for line in contents:
+        c.execute('INSERT INTO entries VALUES(?)', [line])
+#        print(line)
     save_db(conn)
     c.close()
     conn.close()
@@ -47,8 +51,10 @@ def insert_db(log_map):
 def print_db():
     conn = connect_db()
     c = conn.cursor()
-    for row in c.execute('SELECT * FROM logs'):
+    for row in c.execute('SELECT * FROM files'):
         print(row)
+        for row2 in c.execute('SELECT * FROM entries'):
+            print(row2)
     c.close()
     conn.close()
 
@@ -71,32 +77,38 @@ def get_paths():
     logs.close()
 
 def find_errors(path):
-    with open(log_contents,'a') as g:
-        subprocess.call(['printf', path+'\n'], stdout=g)
-        subprocess.call(['grep','-i','-E','error|fail|unable|fatal|broken', '%s' % path], stdout=g)
-        subprocess.call(['printf','\n'], stdout=g)
-    g.close()
+    with open(log_contents,'a') as f:
+        subprocess.call(['printf', path+'\n'], stdout=f)
+        subprocess.call(['grep','-i','-E','error|fail|unable|fatal|broken', '%s' % path], stdout=f)
+        subprocess.call(['printf','\n'], stdout=f)
+    f.close()
+    get_log_contents(path)
 
-def get_log_contents():
-    log_map={}
+def get_log_contents(path):
+    with open(path) as f:
+        contents = f.read().splitlines()
+        insert_db(path,contents)
+    f.close()
+
+def create_path_threads():
     #opens file containing log paths
     with open(log_paths, 'r+') as f:
         #reads path ignoring any newline characters
         paths = f.read().splitlines()
         #for every log file
+        threads = []
         for path in paths:
-            print(path)
-            #FIX ME: quotation marks print with output - maybe not. They actually serve as a good indicator of beginning and end of record
-            find_errors(path)
-            #FIX ME: The idea is to use a dictionary with the path as the key and the contents of the log file in a list of entries corresponding to the number of lines in the log file
             if os.path.isfile(path):
-                #This adds ENTIRE log to db and map. Do I want this?
-                try:
-                    log_map[path]=open(path,'r').readlines()
-                    log_map[path]=[line.strip() for line in log_map[path]]
-                    insert_db(log_map)
-                except:
-                    print("Failed to read bytes from:", path)
+                #need to add a mutex for the database to stop database is locked error
+                t = threading.Thread(target=find_errors, args=[path])
+                threads.append(t)
+        for x in threads:
+            x.start()
+#            print("Started one")
+        thread_i = len(threads)-1
+        for i in range(thread_i):
+            if(i <= thread_i-1):
+                threads[i+1].join()
     f.close()
 
 '''
@@ -133,9 +145,9 @@ def create_html():
     conn.close()
 
 def get_logs():
-    log_clean()
-    get_paths()
-    get_log_contents()
+    #log_clean()
+    #get_paths()
+    create_path_threads()
 
 @app.route('/', methods=['GET'])
 def index():
