@@ -70,32 +70,34 @@ def get_paths():
     subprocess.call(['find','/', '-type', 'f', '-name','*[^a-zA-Z0-9]log','-not','-path','/home/*/[A-Za-z0-9]*', '-not', '-path', '/run/media/*', '-not','-path','/proc/*','-not','-path','*/bin/*', '-not', '-path', '*/sbin/*'], stdout=logs)
     logs.close()
 
+def find_errors(path):
+    with open(log_contents,'a') as g:
+        subprocess.call(['printf', path+'\n'], stdout=g)
+        subprocess.call(['grep','-i','-E','error|fail|unable|fatal|broken', '%s' % path], stdout=g)
+        subprocess.call(['printf','\n'], stdout=g)
+    g.close()
+
 def get_log_contents():
     log_map={}
     #opens file containing log paths
     with open(log_paths, 'r+') as f:
         #reads path ignoring any newline characters
         paths = f.read().splitlines()
-        with open(log_contents,'w+') as g:
-            #for every log file
-            for path in paths:
-                #FIX ME: quotation marks print with output - maybe not. They actually serve as a good indicator of beginning and end of record
-                subprocess.call(['printf', path+'\n'], stdout=g)
-                #search for terms that indicate problems
-                subprocess.call(['grep','-i','-E','error|fail|unable|fatal|broken', '%s' % path], stdout=g)
-                subprocess.call(['printf','\n'], stdout=g)
-                #FIX ME: The idea is to use a dictionary with the path as the key and the contents of the log file in a list of entries corresponding to the number of lines in the log file
-                if os.path.isfile(path):
-                    try:
-                        log_map[path]=open(path,'r').readlines()
-                        log_map[path]=[line.strip() for line in log_map[path]]
-                        insert_db(log_map)
-                    except:
-                        print("Failed to read bytes from:", path)
-                #print(log_map[path])
-                #print()
-            g.close()
-        f.close()
+        #for every log file
+        for path in paths:
+            print(path)
+            #FIX ME: quotation marks print with output - maybe not. They actually serve as a good indicator of beginning and end of record
+            find_errors(path)
+            #FIX ME: The idea is to use a dictionary with the path as the key and the contents of the log file in a list of entries corresponding to the number of lines in the log file
+            if os.path.isfile(path):
+                #This adds ENTIRE log to db and map. Do I want this?
+                try:
+                    log_map[path]=open(path,'r').readlines()
+                    log_map[path]=[line.strip() for line in log_map[path]]
+                    insert_db(log_map)
+                except:
+                    print("Failed to read bytes from:", path)
+    f.close()
 
 '''
 delete_db()
@@ -109,16 +111,22 @@ def create_html():
     if os.path.isfile("templates/logs.html"):
         os.remove("templates/logs.html")
     logs_html = open("templates/logs.html", "w")
-    logs_html.write("<body>\n<h4>Log Contents</h4>\n")
+    logs_html.write("<body>\n<h1>Log Contents</h1>\n")
     logs_html.write("<div>\n")
 #    conn = connect_db()
     c = conn.cursor()
-    for row in c.execute('SELECT * FROM logs'):
-        logs_html.write("<p>")
-        logs_html.write(row[0])
-        logs_html.write(" -> ")
-        logs_html.write(row[1])
-        logs_html.write("\n</p>")
+    with open(log_contents) as f:
+        contents = f.read().splitlines()
+        for line in contents:
+            #adds another possible memory read which sucks
+            if os.path.isfile(line):
+                logs_html.write("<h4>") 
+                logs_html.write(line)
+                logs_html.write("</h4>\n")
+            else:
+                logs_html.write("<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp")
+                logs_html.write(line)
+                logs_html.write("\n</p>")
     logs_html.write("</div></body>")
     logs_html.close()
     c.close()
