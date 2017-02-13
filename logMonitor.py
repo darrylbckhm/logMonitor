@@ -133,8 +133,8 @@ def create_html():
     conn.close()
 
 def get_logs():
-    #log_clean()
-    #get_paths()
+    log_clean()
+    get_paths()
     get_log_contents()
 
 @app.route('/', methods=['GET'])
