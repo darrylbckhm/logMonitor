@@ -4,6 +4,8 @@
 import sqlite3
 import subprocess
 import os
+import threading
+import socket
 from flask import Flask, render_template
 
 log_db_path = "/home/darrylb/darrylbckhm/logMonitor/logs.db"
@@ -15,41 +17,44 @@ app = Flask(__name__)
 def connect_db():
     return sqlite3.connect('/home/darrylb/darrylbckhm/logMonitor/logs.db')
 
-def save_db():
+def save_db(conn):
     conn.commit()
 
 def clear_db():
+    conn = connect_db()
+    c = conn.cursor()
     c.execute('DELETE FROM logs')
     save_db()
 
-def close_db():
-    c.close()
-    conn.close()
-
 def create_table():
-    global c
+    conn = connect_db()
     c = conn.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS logs(file TEXT, error TEXT)')
 
 def insert_db(log_map):
-    global c
+    conn = connect_db()
     c = conn.cursor()
+    c.execute('CREATE TABLE IF NOT EXISTS logs(file TEXT, error TEXT)')
     #considering the trade offs between storing errors as single entries in db, as an array, and/or incrementing a variable to keep track of dups
     for key in log_map:
         for value in log_map[key]:
             c.execute("INSERT INTO logs VALUES (?, ?)", (key, value))
-    save_db()
+        print("Inserted: ", key)
+    save_db(conn)
+    c.close()
+    conn.close()
 
 def print_db():
-    global c
+    conn = connect_db()
     c = conn.cursor()
     for row in c.execute('SELECT * FROM logs'):
         print(row)
+    c.close()
+    conn.close()
 
 def delete_db():
     if os.path.isfile(log_db_path):
         os.remove(log_db_path)
-
 
 def log_clean():
     if os.path.isfile(log_paths):
@@ -92,11 +97,37 @@ def get_log_contents():
             g.close()
         f.close()
 
+'''
 delete_db()
-conn = connect_db()
-c = conn.cursor()
 create_table()
 log_clean()
+c.close()
+conn.close()
+'''
+def create_html():
+    conn = connect_db()
+    if os.path.isfile("templates/logs.html"):
+        os.remove("templates/logs.html")
+    logs_html = open("templates/logs.html", "w")
+    logs_html.write("<body>\n<h4>Log Contents</h4>\n")
+    logs_html.write("<div>\n")
+#    conn = connect_db()
+    c = conn.cursor()
+    for row in c.execute('SELECT * FROM logs'):
+        logs_html.write("<p>")
+        logs_html.write(row[0])
+        logs_html.write(" -> ")
+        logs_html.write(row[1])
+        logs_html.write("\n</p>")
+    logs_html.write("</div></body>")
+    logs_html.close()
+    c.close()
+    conn.close()
+
+def get_logs():
+    #log_clean()
+    #get_paths()
+    get_log_contents()
 
 @app.route('/', methods=['GET'])
 def index():
@@ -104,9 +135,13 @@ def index():
 
 @app.route('/logs', methods=['GET'])
 def logs():
-    get_paths()
-    get_log_contents()
-    print_db()
+    t = threading.Thread(target=get_logs)
+    t.start()
+    while t.isAlive():
+        pass
+    create_html()
+    #should be able to update paths and contents without reloading everything
+    return render_template("logs.html")
 
 if __name__ == "__main__":
     app.run()
